@@ -78,8 +78,8 @@ function Description(){
 <View style={{backgroundColor:"#fff",margin:5,borderTopStartRadius:50,borderTopEndRadius:50}}>       
              
              
-  <Text style={styles.disprice}>Rs. {data.disprice}</Text>
-             <Text style={styles.price}>{data.price}</Text>
+  <Text style={styles.disprice}>Rs. {data.selling_price}</Text>
+             <Text style={styles.price}>{data.original_price}</Text>
              <View style={{display:'flex',flexDirection:'row'}}>
              <Rbutton label={data.min} type={'MIN'}/>
              <Rbutton label={data.max} type={'MAX'}/>
@@ -87,7 +87,7 @@ function Description(){
              <Modals/>
              </View>
              </View>
-<Text style={{marginTop:10,marginLeft:10,marginRight:10,fontSize:20}}>{data.about}</Text>
+<Text style={{marginTop:10,marginLeft:10,marginRight:10,fontSize:20}}>{data.description}</Text>
 
 </ScrollView>
 
@@ -132,13 +132,13 @@ return(
    <View style={styles.conatiner}>
    <TouchableOpacity onPress={()=>navigation.navigate('gallery',data)} style={{display:'flex',flexDirection:'row'} }>
     
-     <Image source={data.image[0]} style={styles.image}/>
+     <Image source={data.image} style={styles.image}/>
      
      <View  style={{display:'flex',flexDirection:'column',justifyContent:'centre',height:250,width:'100%'}}>
-    <Image source={data.image[1]} style={styles.image1}/>
+    {/* <Image source={data.image[1]} style={styles.image1}/>
     <Image source={data.image[2]} style={styles.image1}/>
     <Image source={data.image[3]} style={styles.image1}/>
-    <Image source={data.image[0]} style={styles.image1}/>
+    <Image source={data.image[0]} style={styles.image1}/> */}
     <TouchableOpacity onPress={()=>navigation.navigate('gallery',data)} style={{position:'absolute',backgroundColor:'rgba(255, 255, 255, 0.8)',padding:7,borderRadius:100,top:'42.5%',left:'2%',paddingRight:10,paddingLeft:10,
    shadowOffset: {
     width: 0,
@@ -164,7 +164,7 @@ elevation: 30,
     delay={5}
     
     duration={1500}>
-    <Text style={styles.name}>{data.Name}</Text>
+    <Text style={styles.name}>{data.vendor_name}</Text>
     </Animatable.View>
   <View></View>  
     <Tab.Navigator
@@ -190,11 +190,11 @@ elevation: 30,
       options={{ tabBarLabel: 'Facilities' }}
     />
      
-    <Tab.Screen
+    {/* <Tab.Screen
       name="reviews"
       component={Reviews}
       options={{ tabBarLabel: 'Reviews' }}
-    />
+    /> */}
     
     
     </Tab.Navigator>
